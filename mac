@@ -137,13 +137,10 @@ brew_launchctl_restart 'postgresql'
 brew_install_or_upgrade 'redis'
 brew_launchctl_restart 'redis'
 brew_install_or_upgrade 'the_silver_searcher'
-brew_install_or_upgrade 'vim'
-brew_install_or_upgrade 'ctags'
-brew_install_or_upgrade 'tmux'
 brew_install_or_upgrade 'reattach-to-user-namespace'
 brew_install_or_upgrade 'imagemagick'
+brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'qt'
-brew_install_or_upgrade 'gh'
 brew_install_or_upgrade 'node'
 
 brew_install_or_upgrade 'rbenv'
@@ -174,8 +171,6 @@ gem_install_or_update 'bundler'
 fancy_echo "Configuring Bundler ..."
   number_of_cores=$(sysctl -n hw.ncpu)
   bundle config --global jobs $((number_of_cores - 1))
-
-brew_install_or_upgrade 'heroku-toolbelt'
 
 if ! command -v rcup >/dev/null; then
   brew_tap 'thoughtbot/formulae'
